@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{MATH 4338 Main Problem 4}
+\date{}
+\author{Andy Lu}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\newtheorem{theorem*}{Question}
+
+\begin{document}
+  \maketitle
+  \begin{theorem*} 2.3 \#2
+    \newline
+    Given, 
+    $$f(x)
+    \begin{cases} 
+          \frac{x^2-1}{x^4-1} & 1 < x < 2 \\
+          x^2 +3x - 2 & 2 \leq x < 5
+       \end{cases}
+    $$
+    \begin{itemize}
+      \item Show whether $f$ is continuous on the left at 2 using the method from the book.
+      \item Show whether $f$ is continuous on the right at 2 using the $\epsilon\text{-}\,\delta$ definition of continuity.
+    \end{itemize}
+  \end{theorem*}
+  
+  \begin{proof}
+    Continuity on the left:
+    
+    Start by multiplying the given $f(x)$ by $1$, in the form of $\frac{x^{-4}}{x^{-4}}$:
+    \begin{equation*}
+      (\frac{x^2-1}{x^4-1})(\frac{x^{-4}}{x^{-4}}) = \frac{x^{-2} - x^{-4}}{1 - x^{-4}}
+    \end{equation*}
+    We can compute the limit of this function with the limit rules:
+    \begin{align*}
+      \lim_{x \rightarrow 2^-}\frac{x^{-2} - x^{-4}}{1 - x^{-4}} & &\\
+      &= \frac{\lim_{x \rightarrow 2^-}(x^{-2} - x^{-4})}{\lim_{x \rightarrow 2^-}(1 - x^{-4})} & [\text{Thm 2.8}] \\
+      &= \frac{\lim_{x \rightarrow 2^-}(x^{-2}) - \lim_{x \rightarrow 2^-}(x^{-4})}
+              {\lim_{x \rightarrow 2^-}(1) - \lim_{x \rightarrow 2^-}(x^{-4})} & [\text{Thm 2.5}] \\
+      &= \frac{\frac{1}{2^2} - \frac{1}{2^4}}{(1) - (2^{-4})} & [\lim_{x \rightarrow 2^-}(1) = 1\text{ by Thm 2.2}] \\
+      &= \frac{\frac{1}{4} - \frac{1}{16}}{\frac{16}{16} - \frac{1}{16}} = \frac{3/16}{15/16} = \frac{3}{15} = \frac{1}{5} & [\text{by algebra}] \\
+      & &
+    \end{align*}
+    As $2$ is in the domain of $f$, we can evaluate our function at $x=2$:
+    \begin{equation*}
+      f(2) = \frac{(2)^2-1}{(2)^4-1} = \frac{3}{15} = \frac{1}{5}
+    \end{equation*}
+    By the definition of continuous on the left, $f(x)$ ijs continuous on the left at $2$.
+  \end{proof}
+  \begin{proof}
+    Continuity on the right:
+    
+    Let $\epsilon > 0$. Pick $\,\delta = \frac{-7 + \sqrt{49 +4\epsilon}}{2}$. \\
+    Note:
+    \begin{align*}
+      \delta(\delta + 7) &= \epsilon \\
+      \delta^2 + 7\delta - \epsilon &= 0\\
+      \delta &= \frac{-7 \pm \sqrt{49 +4\epsilon}}{2} \\ 
+    \end{align*}
+    Since $\delta > 0$, we ignore $\frac{-7 - \sqrt{49 +4\epsilon}}{2}$. As $\epsilon > 0$, then
+    $49 +4\epsilon > 49 > 0$. Taking the square root of all terms, $\sqrt{49 +4\epsilon} > 7$.
+    Thus, $\,\delta > 0$ and $\delta \in \mathbb{R}$. Let $x \in [2,5)$. Suppose
+    $0 \leq x-2 < \,\delta$. Then,
+    \begin{align*}
+      |f(x) - f(2)| &\\
+                    &=|(x^2 +3x - 2) - (2^2 + 3(2) - 2)|\\
+                    &=|x^2 + 3x - 2 -8|\\
+                    &=|(x+5)(x-2)| \\
+                    &=|x+5||x-2| \\
+                    &=|x-2 + 7||x-2| <\,\delta(\,\delta + 7) = \epsilon
+    \end{align*}
+
+    Thus, by defintion, $\lim_{x \rightarrow 2+}f(x) = 2$, so $f(x)$ is continuous on the right at $2$.
+  \end{proof}
+\end{document}

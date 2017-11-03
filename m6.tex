@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{MATH 4338 Main Problem 6}
+\date{}
+\author{Andy Lu}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\newtheorem{theorem*}{Question}
+
+\begin{document}
+  \maketitle
+  \begin{proof} 
+    Suppose $f$ is uniformly continuous on $I_1$ and $I_2$. Let $\epsilon >0$.
+    Then,  $\exists \, \delta_1 > 0$ such that $\forall i,j \in I_1 \, \text{
+     if } |i-j| < \delta_1 \text{, then } |f(i)-f(j)| < \frac{\epsilon}{2}$. 
+    Similarly, $\exists \, \delta_2 > 0$ such that $\forall i,j \in I_2 \, 
+    \text{ if } |i-j| < \delta_2 \text{, then } |f(i)-f(j)| < 
+    \frac{\epsilon}{2}$.
+    
+    Consider $I_1 \cup I_2$, where $I_1 = [a,b]$ and $I_2 = [c,d]$. If 
+    $c - b > 0$, pick $\delta = min\{\delta_1, \delta_2, (c-b)\}$. 
+    Otherwise, pick $\delta = min\{\delta_1, \delta_2\}$. As 
+    $\delta_1$, $\delta_2$ $> 0$ and $c-b > 0$, $\delta > 0$. Note, $\delta \in
+    \mathbb{R}$. Suppose $i,j \in I_1 \cup I_2$. Then there are 2 cases:
+    \begin{description}
+      \item[Case 1: $I_1 \cap I_2 \neq \emptyset$] \hfill \\
+        Let k $\in I_1 \cap I_2$. Then,
+        \begin{align*}
+          |i-j| =& \\
+          =& \quad |i-k + k-j| \\
+          \leq& \quad |i-k|+|-1||j-k| \qquad \text{[by Triangle Inequality]} \\
+          =& \quad |i-k| + |j-k| \\
+        \end{align*}
+        As $k \in I_1$ and $f$ is uniformly continuous on $I_1$, then 
+        $|i-k| < \delta_1$ and $|f(i) - f(k)| < \frac{\epsilon}{2}$. 
+        As $k \in I_2$ and $f$ is uniformly continuous on $I_2$, then 
+        $|j-k| < \delta_2$ and $|f(j) - f(k)| < \frac{\epsilon}{2}$. 
+        Suppose $|i-k| < \delta$ and $|j-k| < \delta$, then,
+        \begin{align*}
+          |f(i) - f(k)| + |f(j) - f(k)| =& &\\
+          <& \quad \delta_1 + \delta_2 &\\
+          =& \quad \frac{\epsilon}{2} + \frac{\epsilon}{2} &\\
+          =& \quad \epsilon &
+        \end{align*}
+      \item[Case 2: $I_1 \cap I_2 = \emptyset$]  \hfill \\
+        Without loss of generality, let $i \in I_1$ and $j \in I_2$. Suppose
+        $|i-j| < \delta$. As $|i-j| \geq c-b$, there are two cases:
+        \begin{description}
+          \item[Case 1: $\delta = c-b$] \hfill \\
+            This is a contradiction because $|i-j| \geq c-b$ and $|i-j| < c-b$.
+          \item[Case 2: $\delta < c-b$] \hfill \\
+            This is a contradiction because $|i-j| \geq c-b$ and $|i-j| < 
+            \delta < c-b$.
+        \end{description}
+        Thus our hypothesis is false and the conclusion is vacuously true.
+    \end{description}
+    Thus, f is uniformly continuous on $I_1 \cup I_2$.
+  \end{proof}
+\end{document}

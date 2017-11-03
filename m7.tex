@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{MATH 4338 Main Problem 7}
+\date{}
+\author{Andy Lu}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\newtheorem{theorem*}{Question}
+
+\begin{document}
+  \maketitle
+  \begin{proof}
+    Suppose $a \in \mathbb{R}$ and $f'(a)$ exists at $a$. Then by the definition
+    of derivative, $$\lim_{h \rightarrow 0} \frac{f(a+h) - f(a)}{h}$$ exists. Let 
+    it equal $L$. By Theorem 2.8,
+    $$\lim_{h \rightarrow 0} \frac{f(a+h) - f(a)}{h}  = 
+      \frac{\lim_{h \rightarrow 0} \, g(a)}{\lim_{h \rightarrow 0} \, h(a)}$$,
+    where $g(a) = f(a+h) - f(a)]$ and $h(a) = h$. Thus, the right hand side 
+    exists. Further examining $\lim_{h \rightarrow 0} \, g(a)$, by Theorem 2.5,
+    $$\lim_{h \rightarrow 0} \, g(a) = L_1 + L_2$$
+    where $L_1 = \lim_{h \rightarrow 0} \, f(a+h)$ and 
+    $L_2 = \lim_{h \rightarrow 0} \, f(a)$. 
+    As $\lim_{h \rightarrow 0} \, f(a)$ exists, then by Theorem 2.13, the one
+    sided limits exist. Since the derivative is defined at $a$, $a$ must be in
+    the domain of $f$. Then by the Corollary to Theorem 2.13, $f$ is continuous
+    at $a$.
+    %By Theorem 2.2, $L2 = f(a)$.
+    %As $f(a)$ exists from the construction of the derivative, and the limit of
+    %$f(a)$ equals $f(a)$, then by the limit definition of continuity, $f$ is 
+    %continuous at $a$.
+  \end{proof}
+\end{document}

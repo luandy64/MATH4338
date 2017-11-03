@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{MATH 4338 Main Problem 3}
+\date{}
+\author{Andy Lu}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\newtheorem{theorem*}{Question}
+
+\begin{document}
+  \maketitle
+  \begin{proof}
+    Assume $f(a), h(a)$ are continuous. Assume $f(x) \leq g(x) \leq h(x)$ for 
+    $|x-a| < k$. Lastly, assume $f(a) = h(a)$. \\
+    
+    By the definition of continuity
+    \begin{align*}
+      & & \lim_{x \rightarrow a} f(x) = f(a) & 
+      & \lim_{x \rightarrow a} h(x) = h(a) & &
+    \end{align*}
+    Then by the Sandwich Theorem, $\lim_{x \rightarrow a} g(x) = g(a)$.
+    Pick $x = a$ for $|x-a| < k$. As this inequality holds for $x=a$,
+    $f(a) = g(a) = h(a)$. Furthermore, this means $g(a)$ exists. By the limit 
+    definition of continuity, since $g(a)$ exists and 
+    $$\lim_{x \rightarrow a} g(x) = g(a)$$, $g(x)$ is continuous at a.
+  \end{proof}
+\end{document}

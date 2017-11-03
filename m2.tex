@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{MATH 4338 Main Problem 2}
+\date{}
+\author{Andy Lu}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\newtheorem{theorem*}{Question}
+
+\begin{document}
+  \maketitle
+  \begin{theorem*} 1.2 \#10
+    \newline
+    \begin{itemize}
+      \item Define the operations of addition and multiplication for the set $\mathbb{Q}[\sqrt{5}]$
+      \item State the additive and multiplicative identities (no proof needed)
+      \item For any element $a + b\sqrt{5} \in \mathbb{Q}$ that is not the additive identity, show
+            what its muliplicative inverse is and prove that it is unique
+    \end{itemize}
+  \end{theorem*}
+  
+  \begin{proof}
+    Let $a+b\sqrt{5}$, $c+d\sqrt{5} \in \mathbb{Q}[\sqrt{5}]$. Then we define the following: \\
+    \begin{description}
+        \item[Addition] Let $e+f\sqrt{5} \in \mathbb{Q}[\sqrt{5}]$, where
+        \begin{align*}
+                  e+f\sqrt{5} & = (a+b\sqrt{5}) + (c+d\sqrt{5}) \\
+                              & = (a+c) + (b+d)\sqrt{5}\\
+        \end{align*}
+        So $ e = a+c$ and $f = b+d$.
+        \item[Multiplication] Let $g+h\sqrt{5} \in \mathbb{Q}[\sqrt{5}]$, where
+        \begin{align*}
+                  g+h\sqrt{5} & = (a+b\sqrt{5}) \cdot (c+d\sqrt{5}) \\
+                              & = (a)(c+d\sqrt{5}) + (b\sqrt{5})(c+d\sqrt{5})\\
+                              & = (a)(c) + (a)(d\sqrt{5}) + (c)(b\sqrt{5}) 
+                                         + ((d\sqrt{5}))((b\sqrt{5})) \\
+                              & = (a)(c) + (5)(b)(d) + (a)(d)(\sqrt{5}) + (c)(b)(\sqrt{5}) \\
+                              & = [(a)(c) + (5)(b)(d)] + [(a)(d) + (b)(c)]\sqrt{5}
+        \end{align*}
+        So $g = a \cdot c + 5 \cdot b \cdot d$ and $h = a \cdot d + b \cdot c$.
+        
+        \item[Additive Identity]: $0 + 0\sqrt{5}$ where $ 0 \in \mathbb{Q}$.
+        \item[Multiplicative Identity]: $1 + 0\sqrt{5}$ where $ 1,0 \in \mathbb{Q}$.
+        
+    \break
+        \item[Multiplicative Inverse]: Let $x \in \mathbb{Q}[\sqrt{5}]$ and suppose
+          $x = a+b\sqrt{5}$ \\
+          and  $y = c+d\sqrt{5}$, where $a,b \neq 0$. Pick
+          \begin{align*}
+            c = \frac{-a}{-a^2+5b^2} & & d = \frac{b}{-a^2+5b^2}
+          \end{align*}
+          Since $x \in \mathbb{Q}[\sqrt{5}]$, then $a,b \in \mathbb{Q}$. Suppose
+          $a=\frac{p}{q}$ and $b=\frac{r}{s}$
+          Note that $p,q,r,s \in \mathbb{Z}$, by definition of $\mathbb{Q}$. \\
+          
+          The denominator of $c$ and $d$ then, by arithmetic, is:
+          \begin{align*}
+            (-a^2 + 5b^2) & = (\frac{-p}{q} + \frac{5 \cdot r \cdot r}{s \cdot s}) \\
+                          & = \frac{-p \cdot q \cdot s \cdot s + 5 \cdot r \cdot r 
+                          \cdot q}{q \cdot s \cdot s} \\ 
+          \end{align*}
+          Because $a,b \in \mathbb{Q}$, $q$ and $s$ cannot be equal to zero. Then, the product
+          $q \cdot s \cdot s$ is the product of three non-zero integers. Similarly in the
+          numerator, because $a,b \neq 0$, then $p, r \neq 0$. Thus the numerator is a sum of
+          two integer products. Then $\exists u,v \in \mathbb{Z}$ such that 
+          \begin{align*}
+            (-a^2 + 5b^2) & = \frac{-p \cdot q \cdot s \cdot s + 5 \cdot r \cdot r 
+                          \cdot q}{q \cdot s \cdot s} \\ 
+                          & = \frac{u}{v}
+          \end{align*}
+           Thus, by the definition of $\mathbb{Q}$, $c,d \in \mathbb{Q}$. Furthermore, by
+           definition of $\mathbb{Q}[\sqrt{5}]$, $y \in \mathbb{Q}[\sqrt{5}]$. Using the 
+           definition of multiplication for two elements of $\mathbb{Q}[\sqrt{5}]$,
+           \begin{align*}
+             (x \cdot y) &= (a+b\sqrt{5})(c+d\sqrt{5}) \\
+                         &= (a)(c) + (a)(d\sqrt{5}) + (c)(b\sqrt{5}) + (b\sqrt{5})(d\sqrt{5})
+           \end{align*}
+           Note:
+           \begin{align*}
+              (a)(d\sqrt{5}) &= (a)(\frac{b}{-a^2+5b^2}) \\
+                             &= \frac{ab}{-a^2+5b^2} \\
+              (c)(b\sqrt{5}) &= (\frac{-a}{-a^2+5b^2})(b\sqrt{5}) \\
+                             &= \frac{-ab}{-a^2+5b^2} \\
+           \end{align*}
+           Thus $(a)(d\sqrt{5}) + (c)(b\sqrt{5}) = 0$. \\
+           
+           Continuing $(x \cdot y)$:
+           \begin{align*}
+             (x \cdot y) &= (a)(c) + (a)(d\sqrt{5}) + (c)(b\sqrt{5}) + (b\sqrt{5})(d\sqrt{5})\\
+                         &= (a)(c) + (0) + (b\sqrt{5})(d\sqrt{5})\\
+                         &= (a)(c) + (b\sqrt{5})(d\sqrt{5})\\
+                         &= (a)(c) + (b)(d)(\sqrt{5} \cdot \sqrt{5})\\
+                         &= (a)(c) + (5)(b)(d) \\
+                         &= (a)(\frac{-a}{-a^2+5b^2}) + (5b)(\frac{b}{-a^2+5b^2}) \\
+                         &= (\frac{-a^2}{-a^2+5b^2}) + ((\frac{5b^2}{-a^2+5b^2}))\\
+                         &= (\frac{-a^2+5b^2}{-a^2+5b^2}) \\
+                         &= 1
+           \end{align*}
+           Thus, the multiplicative inverse $y$ exists. Suppose $z \in \mathbb{Q}[\sqrt{5}]$
+           and $x \cdot z = 1$. Then $x \cdot y = 1 = x \cdot y$. Therefore $ y = z$. Thus, $y$
+           is unique.
+    \end{description}
+    
+    
+  \end{proof}
+\end{document}

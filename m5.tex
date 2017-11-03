@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{MATH 4338 Main Problem 5}
+\date{}
+\author{Andy Lu}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\newtheorem{theorem*}{Question}
+
+\begin{document}
+  \maketitle
+  \begin{proof}
+    Suppose $f$ is nondecreasing on an interval $I = \{x: a< x< b\}$, where
+    $a,b \in \mathbb{R}$. Suppose $\exists M \in \mathbb{R}$ such that 
+    $f(x) \leq M$ $\forall x \in I$. By definition, $M$ is an upperbound of 
+    $f(x)$. By Theorem 3.5, we can pick $C \in \mathbb{R}$ such that $C$ is, by
+    definition, the least upper bound of $f(x)$. Note, this means $C \leq M$. 
+    Then, by the Nested Intervals Theorem, it follows that 
+    $$\lim_{x \rightarrow b} f(x) = C$$. Since the limit exists, the one sided
+    limit,
+    $$\lim_{x \rightarrow b^-} f(x) = C$$
+    must also exist.
+  \end{proof}
+\end{document}

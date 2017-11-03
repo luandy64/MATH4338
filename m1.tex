@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{MATH 4338 Main Problem 1}
+\date{}
+\author{Andy Lu}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+  \maketitle
+  \begin{theorem}
+    If $a, b \in \mathbb{R}$  and $a \neq 0$, then there is one and only one
+     number $x$ s.t. $a \cdot x = b$. The number is given by $x = ba^{-1}$.
+  \end{theorem}
+  
+  \begin{proof}
+    Assume $a, b \in \mathbb{R}$ and $a \neq 0$. Let $x = ba^{-1}$. As $a
+     \in \mathbb{R}$, $a^{-1}$ is a number by the existence of a reciprocal 
+     axiom. By the closure property, $x \in \mathbb{R}$. Using the
+    axioms,
+    \begin{align*}
+      ax & = \\
+         & = a(ba^{1}) & [\text{by substitution}]\\
+         & = a(a^{-1}b) & [\text{by commutative property}]\\
+         & = (aa^{-1})b & [\text{by associativity}]\\
+         & = (1)b & [\text{since } a^{-1} \text{ is the reciprocal of } a]\\
+         & = b & [\text{since } 1 \text{ is the multiplicative identity}]
+    \end{align*}
+    Hence, $x=ba^{-1}$. Assume $y$ is a number such that $a \cdot y = b$.
+    Using the axioms,
+    \begin{align*}
+      ay & = b & [\text{by assumption}]\\
+      (a^{-1})ay & = (a^{-1})b & [\text{multiply by} a^{-1}]\\
+      (a^{-1}a)y & = (a^{-1}b) & [\text{by associativity}]\\
+      (aa^{-1})y & = (ba^{-1}) & [\text{by commutativity}]\\
+      (1)y & = ba^{-1} & [\text{since } a^{-1} \text{ is the reciprocal of } a]\\
+      y & = ba^{-1} & [\text{since } 1 \text{ is the multiplicative identity}]
+    \end{align*}
+    Thus, $y=ba^{-1}=x$ and $x$ is unique.
+  \end{proof}
+\end{document}
