@@ -8,15 +8,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsthm}
-\newtheorem{theorem*}{Question}
+\newtheorem{theorem}{Question}
 
 \begin{document}
   \maketitle
+  \begin{theorem}
+    Suppose $f$ and $h$ are continuous at $a$ and $f(x) \leq g(x) \leq h(x)$ for
+    $|x-a|<k$. If $f(a) = h(a)$, show that $g$ is continuous at a.
+  \end{theorem}
+  
   \begin{proof}
-    Assume $f(a), h(a)$ are continuous. Assume $f(x) \leq g(x) \leq h(x)$ for 
+    Assume $f, h$ are continuous at $a$. Assume $f(x) \leq g(x) \leq h(x)$ for 
     $|x-a| < k$. Lastly, assume $f(a) = h(a)$. \\
     
-    By the definition of continuity
+    By the definition of continuity,
     \begin{align*}
       & & \lim_{x \rightarrow a} f(x) = f(a) & 
       & \lim_{x \rightarrow a} h(x) = h(a) & &
@@ -25,6 +30,6 @@
     Pick $x = a$ for $|x-a| < k$. As this inequality holds for $x=a$,
     $f(a) = g(a) = h(a)$. Furthermore, this means $g(a)$ exists. By the limit 
     definition of continuity, since $g(a)$ exists and 
-    $$\lim_{x \rightarrow a} g(x) = g(a)$$, $g(x)$ is continuous at a.
+    $$\lim_{x \rightarrow a} g(x) = g(a)$$ $g(x)$ is continuous at a.
   \end{proof}
 \end{document}
