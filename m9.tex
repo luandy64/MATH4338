@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathtools}
 \title{MATH 4338 Main Problem 9}
 \date{}
 \author{Andy Lu}
@@ -8,11 +9,54 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsthm}
-\newtheorem{theorem*}{Question}
+\newtheorem*{theorem}{Question}
 
 \begin{document}
   \maketitle
+  \begin{theorem}
+    Given the function f defined on $I = {x: 0 \leq x \leq 1}$ by the formula
+    \[
+      f(x) =
+      \begin{cases*}
+        1 \quad& if $x$ is rational \\
+        0 \quad& if $x$ is irrational
+      \end{cases*}\]
+      Prove that $\underline{\int_{0}^{1}}f(x) \, dx = 0$ and 
+      $\overline{\int_{0}^{1}}f(x) \, dx = 1$.
+  \end{theorem}
   \begin{proof}
-    
+    Let f be defined on $I = {x: 0 \leq x \leq 1}$ by the formula
+    \[
+      f(x) =
+      \begin{cases*}
+        1 \quad& if $x$ is rational \\
+        0 \quad& if $x$ is irrational
+      \end{cases*}\]
+    Let $\Delta$ be a subdivision of $I$ s.t. 
+    $0 = d_0 < d_1 < \ldots < d_{n-1} < d_n = 1$ with the corresponding 
+    subintervals denoted $I_1, I_2, \ldots I_n$.
+    By the Archimedian Principle, 
+    $\forall \, I_k \, \exists$ a rational number and an irrational number in
+    $I_k$, for $k = 1,2,\ldots n$. Let $m_k$ and $M_k$ denote the g.l.b and
+     l.u.b of f on $I_k$. Since the range of $f$ on $I_k$ contains only 2
+    values,
+    \begin{equation}
+      \inf_{I_k}f = 0 \qquad \sup_{I_k} f = 1
+    \end{equation}
+    With respect to $\Delta$,
+    \begin{align*}
+      S^{+}(f,\Delta) =& \sum_{i=1}^{n} M_{i}(d_i - d_{i-1})
+      \tag{by definition of Upper Darboux Sum}\\
+      =& \sum_{i=1}^{n} (d_i - d_{i-1}) \tag{since $M_i = 1$}\\
+      =& (d_1 - d_0) + (d_2 - d_1) + \ldots + (d_n - d_{n-1})
+      \tag{by definition of sum}\\
+      =& d_n - d_0 \tag{by combining like terms} \\
+      =& 1- 0 \tag{by construction of $\Delta$} \\
+      =& 1 
+    \end{align*}
+    As $S^{+}(f,\Delta) = 1$, for $f$ on $I=[0,1]$ and subdivision $\Delta$, the
+    g.l.b. of $S^{+}(f,\Delta)$ is $1$. Then by definition of upper Darboux
+    integral, $\overline{\int_{0}^{1}}f(x) \, dx = 1$. Similarly, with respect 
+    to $\Delta$,
   \end{proof}
 \end{document}
