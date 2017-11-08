@@ -58,5 +58,16 @@
     g.l.b. of $S^{+}(f,\Delta)$ is $1$. Then by definition of upper Darboux
     integral, $\overline{\int_{0}^{1}}f(x) \, dx = 1$. Similarly, with respect 
     to $\Delta$,
+    \begin{align*}
+      S_{\_}(f, \Delta) = \sum_{i=1}^{n} m_{i}(d_i - d_{i-1})
+      \tag{by definition of Lower Darboux Sum}\\
+      =& \sum_{i=1}^{n} (0)(d_i - d_{i-1}) \tag{since $m_i=0$}\\
+      =& 0
+    \end{align*}
+    As $S_{\_}(f,\Delta) = 0$, for $f$ on $I=[0,1]$ and subdivision $\Delta$, 
+    the l.u.b. of $S_{\_}(f,\Delta)$ is $0$. Then by definition of the Lower 
+    Darboux Integral, $\underline{\int_{0}^{1}}f(x) \, dx = 0$.
+    Hence, $\underline{\int_{0}^{1}}f(x) \, dx = 0$ and
+    $\overline{\int_{0}^{1}}f(x) \, dx = 1$.
   \end{proof}
 \end{document}
