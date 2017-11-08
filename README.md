@@ -1,6 +1,11 @@
 # MATH4338
-LaTeX files associated with proofs written for MATH 4338 Real Analysis
-
+LaTeX files associated with proofs written for:
+```
+  MATH 4338
+  Real Analysis
+  SMU Mathematics
+  Fall 2017
+```
 ### Method
 I am using TextMate and the associated LaTeX bundle to write the `.tex` files and quickly render the PDFs.
 
